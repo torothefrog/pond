@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pond - torothefrog's projects</title>
+<meta name="description" content="One link to all of torothefrog's projects: games, prototypes and experiments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pond-deep: #0b1d13;
+    --pond: #123324;
+    --pad: #1d5c38;
+    --pad-light: #2e8b57;
+    --frog: #7ee081;
+    --lily: #f2b8c6;
+    --text: #e8f5e9;
+    --muted: #9fc8aa;
+    --card: rgba(23, 51, 36, 0.85);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Roboto Mono', ui-monospace, monospace;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(46, 139, 87, 0.35), transparent),
+      radial-gradient(ellipse 60% 40% at 85% 110%, rgba(46, 139, 87, 0.2), transparent),
+      var(--pond-deep);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 64px; }
+
+  header { text-align: center; margin-bottom: 48px; }
+  .frog { display: block; margin: 0 auto 8px; }
+  h1 {
+    font-size: clamp(40px, 8vw, 64px);
+    letter-spacing: 0.12em;
+    color: var(--frog);
+    text-shadow: 0 0 24px rgba(126, 224, 129, 0.35);
+  }
+  .tagline { color: var(--muted); margin-top: 12px; font-size: 15px; }
+  .tagline em { color: var(--lily); font-style: normal; }
+
+  .pads { display: grid; gap: 20px; }
+  .pad {
+    display: block;
+    background: var(--card);
+    border: 1px solid rgba(126, 224, 129, 0.25);
+    border-radius: 18px;
+    padding: 24px 26px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .pad:hover, .pad:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--frog);
+    box-shadow: 0 8px 30px rgba(126, 224, 129, 0.15);
+    outline: none;
+  }
+  .pad-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .pad h2 { font-size: 22px; color: var(--frog); }
+  .pad .desc { margin-top: 8px; font-size: 14.5px; color: var(--text); }
+  .chips { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(126, 224, 129, 0.4);
+    color: var(--frog);
+    white-space: nowrap;
+  }
+  .chip.play { background: rgba(126, 224, 129, 0.12); }
+  .chip.proto { border-color: rgba(242, 184, 198, 0.5); color: var(--lily); }
+  .pad .go {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .pad:hover .go { color: var(--frog); }
+
+  footer { text-align: center; margin-top: 56px; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--pad-light); }
+  .ripple {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(126, 224, 129, 0.5);
+    display: inline-block; margin: 0 6px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <svg class="frog" viewBox="0 0 120 90" width="104" height="78" role="img" aria-label="Frog">
+        <ellipse cx="60" cy="56" rx="46" ry="30" fill="#7ee081"/>
+        <circle cx="36" cy="24" r="15" fill="#7ee081"/>
+        <circle cx="84" cy="24" r="15" fill="#7ee081"/>
+        <circle cx="36" cy="26" r="8" fill="#e8f5e9"/>
+        <circle cx="84" cy="26" r="8" fill="#e8f5e9"/>
+        <circle cx="38" cy="28" r="4" fill="#0b1d13"/>
+        <circle cx="82" cy="28" r="4" fill="#0b1d13"/>
+        <circle cx="28" cy="56" r="6" fill="#f2b8c6" opacity="0.75"/>
+        <circle cx="92" cy="56" r="6" fill="#f2b8c6" opacity="0.75"/>
+        <path d="M40 60 Q60 76 80 60" stroke="#0b1d13" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h1>POND</h1>
+      <p class="tagline">One link, every project. Pick a <em>lily pad</em> and hop in.</p>
+    </header>
+
+    <main class="pads">
+
+      <a class="pad" href="https://torothefrog.github.io/wonnect/">
+        <div class="pad-top">
+          <h2>Wonnect</h2>
+        </div>
+        <p class="desc">A Slovenian word-connect game. Drag across the letters on the wheel,
+        build words and fill the crossword. Progress saves in your browser.</p>
+        <div class="chips">
+          <span class="chip play">Ready to play</span>
+          <span class="chip">Mobile friendly</span>
+          <span class="chip">Game</span>
+        </div>
+        <p class="go">Play Wonnect &rarr;</p>
+      </a>
+
+      <a class="pad" href="https://torothefrog.github.io/vracker/game.html">
+        <div class="pad-top">
+          <h2>Vracker</h2>
+        </div>
+        <p class="desc">A webcam tracking prototype for two homemade steering wheels, plus
+        Space Dodgers, the asteroid-dodging game built on it. Print the markers or use
+        the built-in simulation. All video stays on your device.</p>
+        <div class="chips">
+          <span class="chip proto">Experimental prototype</span>
+          <span class="chip">Best on desktop</span>
+          <span class="chip">Game + tracker</span>
+        </div>
+        <p class="go">Open Vracker &rarr;</p>
+      </a>
+
+    </main>
+
+    <footer>
+      <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
+      <p>More pads coming as new projects land.<br>
+      Built by <a href="https://github.com/torothefrog">torothefrog</a></p>
+    </footer>
+  </div>
+</body>
+</html>
