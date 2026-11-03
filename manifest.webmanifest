@@ -1,0 +1,9 @@
+{
+  "name": "Pond",
+  "short_name": "Pond",
+  "start_url": "/pond/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1d13",
+  "theme_color": "#0b1d13"
+}
