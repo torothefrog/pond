@@ -29,6 +29,7 @@ The pond palette (as used by the Pond index and Wonnect):
 | Text | `#e8f5e9` |
 | Muted text | `#9fc8aa` |
 | Wrong / danger | `#e2543e` |
+| Reward / highlight gold | `#ffb703` |
 
 Pages set `<meta name="theme-color" content="#0b1d13">`.
 
