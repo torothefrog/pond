@@ -28,94 +28,101 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Roboto Mono', ui-monospace, monospace;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(46, 139, 87, 0.35), transparent),
-      radial-gradient(ellipse 60% 40% at 85% 110%, rgba(46, 139, 87, 0.2), transparent),
-      var(--pond-deep);
+    background: var(--pond-deep);
     color: var(--text);
     min-height: 100vh;
     line-height: 1.6;
   }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 64px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 20px 64px; }
 
-  header { text-align: center; margin-bottom: 20px; }
-  .frog { display: block; margin: 0 auto 8px; }
-  h1 {
-    font-size: clamp(34px, 7vw, 56px);
-    letter-spacing: 0.10em;
-    color: var(--frog);
-    text-shadow: 0 0 24px rgba(126, 224, 129, 0.35);
+  header {
+    display: flex; align-items: center; gap: 16px;
+    padding-bottom: 22px; margin-bottom: 8px;
+    border-bottom: 1px solid rgba(126, 224, 129, 0.16);
   }
-  .tagline { color: var(--muted); margin-top: 12px; font-size: 15px; }
+  .frog { flex: 0 0 auto; display: block; }
+  h1 {
+    font-size: clamp(22px, 4.5vw, 30px);
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--text);
+  }
+  h1 .frog-word { color: var(--frog); }
+  .tagline { color: var(--muted); margin-top: 4px; font-size: 13.5px; }
   .tagline em { color: var(--lily); font-style: normal; }
+
   .built-by {
-    max-width: 620px; margin: 18px auto 0; font-size: 13px; color: var(--muted);
-    border: 1px solid rgba(126, 224, 129, 0.2); border-radius: 12px;
-    padding: 12px 16px; background: rgba(18, 51, 36, 0.5);
+    margin: 18px 0 0; font-size: 12.5px; color: var(--muted);
+    max-width: 640px;
   }
   .built-by b { color: var(--text); font-weight: 500; }
 
-  section { margin-top: 44px; }
+  section { margin-top: 40px; }
   .area {
     display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px;
   }
   .area h2 {
-    font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
     color: var(--muted); font-weight: 500;
   }
-  .area .line { flex: 1; height: 1px; background: rgba(126, 224, 129, 0.18); }
+  .area .note { font-size: 12px; color: var(--muted); opacity: 0.75; }
+  .area .line { flex: 1; height: 1px; background: rgba(126, 224, 129, 0.14); }
 
-  .pads { display: grid; gap: 20px; }
+  .pads { display: grid; gap: 16px; }
   .pad {
     display: block;
     background: var(--card);
-    border: 1px solid rgba(126, 224, 129, 0.25);
-    border-radius: 18px;
-    padding: 24px 26px;
+    border: 1px solid rgba(126, 224, 129, 0.18);
+    border-radius: 14px;
+    padding: 20px 22px;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
   .pad:hover, .pad:focus-visible {
-    transform: translateY(-3px);
-    border-color: var(--frog);
-    box-shadow: 0 8px 30px rgba(126, 224, 129, 0.15);
+    border-color: rgba(126, 224, 129, 0.55);
+    background: rgba(29, 92, 56, 0.35);
     outline: none;
   }
   .pad-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-  .pad h3 { font-size: 22px; color: var(--frog); }
-  .pad .desc { margin-top: 8px; font-size: 14.5px; color: var(--text); }
-  .chips { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .pad h3 { font-size: 19px; color: var(--frog); font-weight: 500; }
+  .pad .desc { margin-top: 6px; font-size: 14px; color: var(--text); }
+  .chips { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
   .chip {
-    font-size: 12px;
-    padding: 4px 10px;
+    font-size: 11.5px;
+    padding: 3px 10px;
     border-radius: 999px;
-    border: 1px solid rgba(126, 224, 129, 0.4);
+    border: 1px solid rgba(126, 224, 129, 0.35);
     color: var(--frog);
     white-space: nowrap;
   }
-  .chip.live { background: rgba(126, 224, 129, 0.12); }
-  .chip.proto { border-color: rgba(242, 184, 198, 0.5); color: var(--lily); }
+  .chip.live { background: rgba(126, 224, 129, 0.10); }
+  .chip.proto { border-color: rgba(242, 184, 198, 0.45); color: var(--lily); }
+  .chip.kids { border-color: rgba(242, 184, 198, 0.45); color: var(--lily); }
   .pad .go {
-    margin-top: 14px;
-    font-size: 13px;
+    margin-top: 12px;
+    font-size: 12.5px;
     color: var(--muted);
   }
   .pad:hover .go { color: var(--frog); }
 
-  footer { text-align: center; margin-top: 56px; color: var(--muted); font-size: 13px; }
-  footer a { color: var(--pad-light); }
-  .ripple {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: rgba(126, 224, 129, 0.5);
-    display: inline-block; margin: 0 6px;
+  section.lab .pad { border-style: dashed; border-color: rgba(242, 184, 198, 0.28); }
+  section.lab .pad:hover { border-color: rgba(242, 184, 198, 0.6); background: rgba(23, 51, 36, 0.95); }
+  section.lab .area h2 { color: var(--lily); }
+  section.lab .area .line { background: rgba(242, 184, 198, 0.18); }
+
+  footer {
+    margin-top: 52px; padding-top: 20px;
+    border-top: 1px solid rgba(126, 224, 129, 0.16);
+    color: var(--muted); font-size: 12.5px;
   }
+  footer a { color: var(--pad-light); }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <svg class="frog" viewBox="0 0 120 90" width="104" height="78" role="img" aria-label="Frog">
+      <svg class="frog" viewBox="0 0 120 90" width="52" height="39" role="img" aria-label="Frog">
         <ellipse cx="60" cy="56" rx="46" ry="30" fill="#7ee081"/>
         <circle cx="36" cy="24" r="15" fill="#7ee081"/>
         <circle cx="84" cy="24" r="15" fill="#7ee081"/>
@@ -127,12 +134,15 @@
         <circle cx="92" cy="56" r="6" fill="#f2b8c6" opacity="0.75"/>
         <path d="M40 60 Q60 76 80 60" stroke="#0b1d13" stroke-width="4" fill="none" stroke-linecap="round"/>
       </svg>
-      <h1>TORO THE FROG</h1>
-      <p class="tagline">One frog, a few agents, and a pond full of things they built.</p>
-      <p class="built-by"><b>How this pond works:</b> Toro points, the agents build.
-      Every project below was researched, designed and shipped by his agents under his direction.
-      New requests arrive as GitHub issues on the pond repo.</p>
+      <div>
+        <h1>Toro the <span class="frog-word">Frog</span></h1>
+        <p class="tagline">Things built in the pond - tools, games and experiments.</p>
+      </div>
     </header>
+
+    <p class="built-by"><b>How this pond works:</b> Toro points, his agents build.
+    Every project below was researched, designed and shipped by agents under his direction.
+    New requests arrive as GitHub issues on the pond repo.</p>
 
     <section>
       <div class="area"><h2>Tools</h2><span class="line"></span></div>
@@ -157,7 +167,7 @@
     </section>
 
     <section>
-      <div class="area"><h2>Play</h2><span class="line"></span></div>
+      <div class="area"><h2>Games</h2><span class="line"></span></div>
       <div class="pads">
 
         <a class="pad" href="https://torothefrog.github.io/wonnect/">
@@ -169,7 +179,7 @@
           <div class="chips">
             <span class="chip live">Ready to play</span>
             <span class="chip">Mobile friendly</span>
-            <span class="chip">Game</span>
+            <span class="chip">Word game</span>
           </div>
           <p class="go">Play Wonnect &rarr;</p>
         </a>
@@ -184,31 +194,16 @@
           <div class="chips">
             <span class="chip live">Ready to play</span>
             <span class="chip">Mobile friendly</span>
-            <span class="chip">Puzzle</span>
+            <span class="chip">Logic puzzle</span>
           </div>
           <p class="go">Find the frogs &rarr;</p>
-        </a>
-
-        <a class="pad" href="https://torothefrog.github.io/clock/">
-          <div class="pad-top">
-            <h3>Clock</h3>
-          </div>
-          <p class="desc">A clock-reading game for kids. An analog clock shows a time;
-          type what you see on the big digit pad. Four levels, from full hours to
-          five-minute steps. Stars and streaks save in your browser.</p>
-          <div class="chips">
-            <span class="chip live">Ready to play</span>
-            <span class="chip">Mobile friendly</span>
-            <span class="chip">Game</span>
-          </div>
-          <p class="go">Play Clock &rarr;</p>
         </a>
 
       </div>
     </section>
 
-    <section>
-      <div class="area"><h2>Experiments</h2><span class="line"></span></div>
+    <section class="lab">
+      <div class="area"><h2>Laboratory</h2><span class="note">prototypes and kids' projects</span><span class="line"></span></div>
       <div class="pads">
 
         <a class="pad" href="https://torothefrog.github.io/vracker/game.html">
@@ -226,13 +221,27 @@
           <p class="go">Open Vracker &rarr;</p>
         </a>
 
+        <a class="pad" href="https://torothefrog.github.io/clock/">
+          <div class="pad-top">
+            <h3>Clock</h3>
+          </div>
+          <p class="desc">A clock-reading game for kids. An analog clock shows a time;
+          type what you see on the big digit pad. Four levels, from full hours to
+          five-minute steps. Stars and streaks save in your browser.</p>
+          <div class="chips">
+            <span class="chip live">Ready to play</span>
+            <span class="chip kids">For kids</span>
+            <span class="chip">Mobile friendly</span>
+          </div>
+          <p class="go">Play Clock &rarr;</p>
+        </a>
+
       </div>
     </section>
 
     <footer>
-      <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
       <p>Want something built or fixed? Open an issue on the
-      <a href="https://github.com/torothefrog/pond/issues">pond repo</a>.<br>
+      <a href="https://github.com/torothefrog/pond/issues">pond repo</a>.
       Built by <a href="https://github.com/torothefrog">torothefrog</a>'s agents.</p>
     </footer>
   </div>
