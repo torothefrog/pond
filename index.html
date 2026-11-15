@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pond - torothefrog's projects</title>
-<meta name="description" content="One link to all of torothefrog's projects: games, prototypes and experiments.">
+<title>Toro the Frog - things built in the pond</title>
+<meta name="description" content="Toro the Frog builds games, tools and experiments - most of them designed and shipped by his agents. Start here.">
 <meta name="theme-color" content="#0b1d13">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,16 +38,32 @@
   }
   .wrap { max-width: 880px; margin: 0 auto; padding: 48px 20px 64px; }
 
-  header { text-align: center; margin-bottom: 48px; }
+  header { text-align: center; margin-bottom: 20px; }
   .frog { display: block; margin: 0 auto 8px; }
   h1 {
-    font-size: clamp(40px, 8vw, 64px);
-    letter-spacing: 0.12em;
+    font-size: clamp(34px, 7vw, 56px);
+    letter-spacing: 0.10em;
     color: var(--frog);
     text-shadow: 0 0 24px rgba(126, 224, 129, 0.35);
   }
   .tagline { color: var(--muted); margin-top: 12px; font-size: 15px; }
   .tagline em { color: var(--lily); font-style: normal; }
+  .built-by {
+    max-width: 620px; margin: 18px auto 0; font-size: 13px; color: var(--muted);
+    border: 1px solid rgba(126, 224, 129, 0.2); border-radius: 12px;
+    padding: 12px 16px; background: rgba(18, 51, 36, 0.5);
+  }
+  .built-by b { color: var(--text); font-weight: 500; }
+
+  section { margin-top: 44px; }
+  .area {
+    display: flex; align-items: baseline; gap: 12px; margin-bottom: 18px;
+  }
+  .area h2 {
+    font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+  }
+  .area .line { flex: 1; height: 1px; background: rgba(126, 224, 129, 0.18); }
 
   .pads { display: grid; gap: 20px; }
   .pad {
@@ -67,7 +83,7 @@
     outline: none;
   }
   .pad-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-  .pad h2 { font-size: 22px; color: var(--frog); }
+  .pad h3 { font-size: 22px; color: var(--frog); }
   .pad .desc { margin-top: 8px; font-size: 14.5px; color: var(--text); }
   .chips { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
   .chip {
@@ -78,7 +94,7 @@
     color: var(--frog);
     white-space: nowrap;
   }
-  .chip.play { background: rgba(126, 224, 129, 0.12); }
+  .chip.live { background: rgba(126, 224, 129, 0.12); }
   .chip.proto { border-color: rgba(242, 184, 198, 0.5); color: var(--lily); }
   .pad .go {
     margin-top: 14px;
@@ -111,77 +127,113 @@
         <circle cx="92" cy="56" r="6" fill="#f2b8c6" opacity="0.75"/>
         <path d="M40 60 Q60 76 80 60" stroke="#0b1d13" stroke-width="4" fill="none" stroke-linecap="round"/>
       </svg>
-      <h1>POND</h1>
-      <p class="tagline">One link, every project. Pick a <em>lily pad</em> and hop in.</p>
+      <h1>TORO THE FROG</h1>
+      <p class="tagline">One frog, a few agents, and a pond full of things they built.</p>
+      <p class="built-by"><b>How this pond works:</b> Toro points, the agents build.
+      Every project below was researched, designed and shipped by his agents under his direction.
+      New requests arrive as GitHub issues and get picked up from there.</p>
     </header>
 
-    <main class="pads">
+    <section>
+      <div class="area"><h2>Tools</h2><span class="line"></span></div>
+      <div class="pads">
 
-      <a class="pad" href="https://torothefrog.github.io/wonnect/">
-        <div class="pad-top">
-          <h2>Wonnect</h2>
-        </div>
-        <p class="desc">A Slovenian word-connect game. Drag across the letters on the wheel,
-        build words and fill the crossword. Progress saves in your browser.</p>
-        <div class="chips">
-          <span class="chip play">Ready to play</span>
-          <span class="chip">Mobile friendly</span>
-          <span class="chip">Game</span>
-        </div>
-        <p class="go">Play Wonnect &rarr;</p>
-      </a>
+        <a class="pad" href="https://torothefrog.github.io/mass/">
+          <div class="pad-top">
+            <h3>Mass</h3>
+          </div>
+          <p class="desc">A live view of the agents themselves. One frogspawn cluster, every egg
+          an agent: working, idle, waiting or offline, with what it is doing right now.
+          Any agent pointed at the repo joins the mass. Built for phone and tablet.</p>
+          <div class="chips">
+            <span class="chip live">Live</span>
+            <span class="chip">Mobile friendly</span>
+            <span class="chip">Agent dashboard</span>
+          </div>
+          <p class="go">Open Mass &rarr;</p>
+        </a>
 
-      <a class="pad" href="https://torothefrog.github.io/vracker/game.html">
-        <div class="pad-top">
-          <h2>Vracker</h2>
-        </div>
-        <p class="desc">A webcam tracking prototype for two homemade steering wheels, plus
-        Space Dodgers, the asteroid-dodging game built on it. Print the markers or use
-        the built-in simulation. All video stays on your device.</p>
-        <div class="chips">
-          <span class="chip proto">Experimental prototype</span>
-          <span class="chip">Best on desktop</span>
-          <span class="chip">Game + tracker</span>
-        </div>
-        <p class="go">Open Vracker &rarr;</p>
-      </a>
+      </div>
+    </section>
 
-      <a class="pad" href="https://torothefrog.github.io/find-the-frog/">
-        <div class="pad-top">
-          <h2>Find the Frog</h2>
-        </div>
-        <p class="desc">A logic puzzle with frogs. Place one frog in every colored pond, row
-        and column - frogs cannot touch, not even diagonally. Every board has exactly one
-        solution. Sizes 6x6 to 10x10, three hearts, hints when you get stuck.</p>
-        <div class="chips">
-          <span class="chip proto">Experimental prototype</span>
-          <span class="chip">Mobile friendly</span>
-          <span class="chip">Puzzle</span>
-        </div>
-        <p class="go">Find the frogs &rarr;</p>
-      </a>
+    <section>
+      <div class="area"><h2>Play</h2><span class="line"></span></div>
+      <div class="pads">
 
-      <a class="pad" href="https://torothefrog.github.io/clock/">
-        <div class="pad-top">
-          <h2>Clock</h2>
-        </div>
-        <p class="desc">A clock-reading game for kids. An analog clock shows a time;
-        type what you see on the big digit pad. Four levels, from full hours to
-        five-minute steps. Stars and streaks save in your browser.</p>
-        <div class="chips">
-          <span class="chip play">Ready to play</span>
-          <span class="chip">Mobile friendly</span>
-          <span class="chip">Game</span>
-        </div>
-        <p class="go">Play Clock &rarr;</p>
-      </a>
+        <a class="pad" href="https://torothefrog.github.io/wonnect/">
+          <div class="pad-top">
+            <h3>Wonnect</h3>
+          </div>
+          <p class="desc">A Slovenian word-connect game. Drag across the letters on the wheel,
+          build words and fill the crossword. Progress saves in your browser.</p>
+          <div class="chips">
+            <span class="chip live">Ready to play</span>
+            <span class="chip">Mobile friendly</span>
+            <span class="chip">Game</span>
+          </div>
+          <p class="go">Play Wonnect &rarr;</p>
+        </a>
 
-    </main>
+        <a class="pad" href="https://torothefrog.github.io/find-the-frog/">
+          <div class="pad-top">
+            <h3>Find the Frog</h3>
+          </div>
+          <p class="desc">A logic puzzle with frogs. Place one frog in every colored pond, row
+          and column - frogs cannot touch, not even diagonally. Every board has exactly one
+          solution. Sizes 6x6 to 10x10, three hearts, hints when you get stuck.</p>
+          <div class="chips">
+            <span class="chip live">Ready to play</span>
+            <span class="chip">Mobile friendly</span>
+            <span class="chip">Puzzle</span>
+          </div>
+          <p class="go">Find the frogs &rarr;</p>
+        </a>
+
+        <a class="pad" href="https://torothefrog.github.io/clock/">
+          <div class="pad-top">
+            <h3>Clock</h3>
+          </div>
+          <p class="desc">A clock-reading game for kids. An analog clock shows a time;
+          type what you see on the big digit pad. Four levels, from full hours to
+          five-minute steps. Stars and streaks save in your browser.</p>
+          <div class="chips">
+            <span class="chip live">Ready to play</span>
+            <span class="chip">Mobile friendly</span>
+            <span class="chip">Game</span>
+          </div>
+          <p class="go">Play Clock &rarr;</p>
+        </a>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="area"><h2>Experiments</h2><span class="line"></span></div>
+      <div class="pads">
+
+        <a class="pad" href="https://torothefrog.github.io/vracker/game.html">
+          <div class="pad-top">
+            <h3>Vracker</h3>
+          </div>
+          <p class="desc">A webcam tracking prototype for two homemade steering wheels, plus
+          Space Dodgers, the asteroid-dodging game built on it. Print the markers or use
+          the built-in simulation. All video stays on your device.</p>
+          <div class="chips">
+            <span class="chip proto">Experimental prototype</span>
+            <span class="chip">Best on desktop</span>
+            <span class="chip">Game + tracker</span>
+          </div>
+          <p class="go">Open Vracker &rarr;</p>
+        </a>
+
+      </div>
+    </section>
 
     <footer>
       <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
-      <p>More pads coming as new projects land.<br>
-      Built by <a href="https://github.com/torothefrog">torothefrog</a></p>
+      <p>Want something built or fixed? Open an issue on the
+      <a href="https://github.com/torothefrog/pond/issues">pond repo</a>.<br>
+      Built by <a href="https://github.com/torothefrog">torothefrog</a>'s agents.</p>
     </footer>
   </div>
 </body>
